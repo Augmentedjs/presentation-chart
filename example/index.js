@@ -1,6 +1,5 @@
-import ChartView from "../dist/augmented-next-chart.js";
+import ChartView from "augmented-next-chart.js";
 import Data from "./data.js";
-import css from "./styles/extra.css";
 
 const dogChart = new ChartView({
   "title": "Dogs by average weight",
