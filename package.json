@@ -1,13 +1,12 @@
 {
-  "name": "chart",
+  "name": "augmentedjs-next-chart",
   "version": "1.0.0",
   "description": "A simple class that renders a table like a bar chart",
-  "main": "index.js",
+  "main": "augmentedjs-next-chart.js",
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
     "build": "webpack --mode production --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
     "test": "mocha --require babel-core/register --require test/helper.js -c test/*Spec.js",
-    "start": "node ./index.js",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build"
@@ -17,7 +16,12 @@
     "url": "git+https://github.com/augmentedjs/chart.git"
   },
   "author": "Bob Warren <robert_warren@gap.com>",
-  "license": "unlicence",
+  "license": "Apache-2.0",
+  "keywords": [
+    "augmentedjs",
+    "presentation",
+    "chart"
+  ],
   "bugs": {
     "url": "https://github.com/augmentedjs/chart/issues"
   },
