@@ -1,8 +1,8 @@
 {
   "name": "augmentedjs-next-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple class that renders a table like a bar chart",
-  "main": "augmentedjs-next-chart.js",
+  "main": "dist/augmentedjs-next-chart.js",
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
     "build": "webpack --mode production --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
