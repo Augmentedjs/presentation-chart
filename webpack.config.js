@@ -1,19 +1,17 @@
-const path = require("path");
-const webpack = require("webpack");
-const nodeExternals = require('webpack-node-externals');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: "./src/chart.js",
+  entry: './src/index.js',
   context: __dirname,
   target: "web",
-  externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'augmented-next-chart.js',
     publicPath: '/dist/',
-    library: "ChartView",
-    libraryTarget: "umd",
-    umdNamedDefine: true
+    //library: "Charts",
+    libraryTarget: "umd"
+    //umdNamedDefine: true
   },
   module: {
     rules: [
@@ -23,15 +21,14 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          "file-loader"
-        ]
       }
     ]
   },
   stats: "errors-only",
-  devtool: "source-map"
+  devtool: "source-map",
+  plugins: [
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(require("./package.json").version)
+    })
+  ]
 };

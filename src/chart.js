@@ -1,5 +1,4 @@
 import Augmented from "augmentedjs-next-presentation";
-
 import css from "./styles/extra.css";
 
 const buildBars = (data) => {
@@ -150,5 +149,4 @@ class ChartView extends Augmented.Presentation.Colleague {
 		return super.remove();
 	};
 };
-
 export default ChartView;
