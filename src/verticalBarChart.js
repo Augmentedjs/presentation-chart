@@ -1,5 +1,5 @@
 import Augmented from "augmentedjs-next-presentation";
-import css from "./styles/extra.css";
+import css from "./styles/vertical.css";
 
 const buildBars = (data) => {
 	let bars = "";
@@ -59,7 +59,7 @@ const buildLabelColumn = (start, title, end) => {
 
 const DEFAULT_TAG = "table";
 
-class ChartView extends Augmented.Presentation.Colleague {
+class VerticalBarChartView extends Augmented.Presentation.Colleague {
 	constructor(options) {
 		if (!options) {
 			options = {};
@@ -70,9 +70,9 @@ class ChartView extends Augmented.Presentation.Colleague {
 		options.tagName = DEFAULT_TAG;
 
 		if (!options.style) {
-			options.style = "barChart";
+			options.style = "barChart vertical";
 		} else {
-			options.style = `barChart ${options.style}`;
+			options.style = `barChart  vertical ${options.style}`;
 		}
 
 		super(options);
@@ -149,4 +149,4 @@ class ChartView extends Augmented.Presentation.Colleague {
 		return super.remove();
 	};
 };
-export default ChartView;
+export default VerticalBarChartView;

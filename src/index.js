@@ -1,3 +1,5 @@
-import ChartView from "./chart.js";
+import HorizontalBarChartView from "./horizontalBarChart.js";
+import VerticalBarChartView from "./verticalBarChart.js"
 
-module.exports.ChartView = ChartView;
+module.exports.HorizontalBarChartView = HorizontalBarChartView;
+module.exports.VerticalBarChartView = VerticalBarChartView;
