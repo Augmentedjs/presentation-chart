@@ -3,46 +3,41 @@ import CSS from "./styles/chart.css";
 import horizontalCSS from "./styles/horizontal.css";
 
 const buildBars = (data) => {
-	let bars = "";
 	if (!data) {
 		return "";
 	}
-	if (data) {
-		const l = data.length;
-		let i = 0;
+	const l = data.length;
+	let i = 0,
+	bars = "";
 
-		for (i = 0; i < l; i++) {
-			const value = data[i].X;
-			const style = (data[i].style) ? ` ${data[i].style}` : "";
-			bars += `
-				<tr>
-					<td>
-						${data[i].Y}
-					</td>
-					<td>
-						<div class="bar${style}" style="width: ${value}%">
-							<p>${value}</p>
-						</div>
-					</td>
-				</tr>
-			`;
-		}
+	for (i = 0; i < l; i++) {
+		const style = (data[i].style) ? ` ${data[i].style}` : "";
+		bars += `
+			<tr>
+				<td>
+					${data[i].Y}
+				</td>
+				<td>
+					<div class="bar${style}" style="width: ${data[i].X}%">
+						<p>${data[i].X}</p>
+					</div>
+				</td>
+			</tr>
+		`;
 	}
 	return bars;
-};
-
-const buildLabelRow = (start, title, end) => {
-	const label = `
-		<td class="label" colspan = >
-			<p class="top">${end}</p>
+},
+buildLabelRow = (start, title, end) => {
+	return `
+		<td class="label"></td>
+		<td class="label">
+			<p class="left">${start}</p>
 			<p class="text">${title}</p>
-			<p class="bottom">${start}</p>
+			<p class="right">${end}</p>
 		</td>
 	`;
-	return label;
-};
-
-const DEFAULT_TAG = "table";
+},
+DEFAULT_TAG = "table";
 
 class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 	constructor(options) {
@@ -114,11 +109,10 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 					</tbody>
 					<tfoot>
 						<tr>
-							${buildLabelRow(this.xStart, this.xTitle, this.xEnds)}
+							${buildLabelRow(this.xStart, this.xTitle, this.xEnd)}
 						</tr>
 					<thead>
 				`;
-
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;
       }

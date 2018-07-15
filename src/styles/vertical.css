@@ -30,49 +30,6 @@
   border: 0;
 }
 
-.bar {
-  width: 100%;
-  background-color: var(--blue-500);
-  position: relative;
-}
-
-.bar > p {
-  display: block;
-  position: absolute;
-  top: -2.5em;
-  text-align: center;
-  font-size: 7pt;
-  width: 100%;
-}
-
-.bar.red {
-  background-color: var(--red-500);
-}
-
-.bar.purple {
-  background-color: var(--purple-500);
-}
-
-.bar.yellow {
-  background-color: var(--yellow-500);
-}
-
-.bar.blue {
-  background-color: var(--blue-500);
-}
-
-.bar.black {
-  background-color: var(--black);
-}
-
-.bar.orange {
-  background-color: var(--orange-500);
-}
-
-.bar.green {
-  background-color: var(--green-500);
-}
-
 .barChart.vertical > td.label p {
   text-align: right;
   font-size: 8pt;
@@ -80,33 +37,11 @@
   color: var(--dark-text);
 }
 
-.barChart.vertical > td.label p.text {
+.barChart.vertical td.label p.text {
   display: block;
   position: absolute;
   top: 50%;
   left: -1.25em;
   transform: rotate(90deg);
   white-space: nowrap;
-}
-
-.barChart.vertical > th.label.text {
-  font-size: 8pt;
-  font-weight: normal;
-  color: var(--dark-text);
-}
-
-.barChart.vertical > td.label p.top {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: auto;
-  height: 1em;
-}
-
-.barChart.vertical > td.label p.bottom {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  width: auto;
-  height: 1em;
 }

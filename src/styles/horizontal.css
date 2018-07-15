@@ -45,46 +45,18 @@ table.barChart.horizontal > tbody > tr > td:nth-child(1) {
 .barChart.horizontal .bar > p {
   display: block;
   position: absolute;
-  right: -2.5em;
-  text-align: center;
+  top: 1em;
+  right: -2em;
+  text-align: right;
   font-size: 7pt;
   width: 100%;
 }
 
-.barChart.horizontal > td.label p {
-  text-align: right;
-  font-size: 8pt;
-  margin: 0;
-  color: var(--dark-text);
-}
-
-.barChart.horizontal > td.label p.text {
+.barChart.horizontal td.label p.text {
   display: block;
   position: absolute;
   top: 50%;
   left: -1.25em;
   transform: rotate(90deg);
   white-space: nowrap;
-}
-
-.barChart.horizontal > th.label.text {
-  font-size: 8pt;
-  font-weight: normal;
-  color: var(--dark-text);
-}
-
-.barChart.horizontal > td.label p.top {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: auto;
-  height: 1em;
-}
-
-.barChart.horizontal > td.label p.bottom {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  width: auto;
-  height: 1em;
 }

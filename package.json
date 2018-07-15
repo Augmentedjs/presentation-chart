@@ -1,6 +1,6 @@
 {
   "name": "augmentedjs-next-chart",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/augmented-next-chart.js",
   "scripts": {

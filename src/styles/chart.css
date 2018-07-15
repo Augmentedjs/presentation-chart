@@ -44,6 +44,29 @@
   font-weight: bold;
 }
 
+.barChart > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) {
+  border-left: 1px solid rgba(0,0,0,0.4);
+}
+.barChart > tbody:nth-child(2) > tr > td:last-of-type {
+  border-right: 1px solid rgba(0,0,0,0.4);
+}
+
+
+.bar {
+  width: 100%;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+.bar > p {
+  display: block;
+  position: absolute;
+  top: -2.5em;
+  text-align: center;
+  font-size: 7pt;
+  width: 100%;
+}
+
 .bar.red {
   background-color: var(--red-500);
 }
@@ -72,9 +95,47 @@
   background-color: var(--green-500);
 }
 
-.barChart > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) {
-  border-left: 1px solid rgba(0,0,0,0.4);
+p.left {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: 1em;
 }
-.barChart > tbody:nth-child(2) > tr > td:last-of-type {
-  border-right: 1px solid rgba(0,0,0,0.4);
+
+p.right {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: 1em;
+}
+
+.barChart th.label p.text {
+  font-size: 8pt;
+  font-weight: normal;
+  color: var(--dark-text);
+}
+
+.barChart td.label p {
+  text-align: right;
+  font-size: 8pt;
+  margin: 0;
+  color: var(--dark-text);
+}
+
+p.top {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 1em;
+}
+
+p.bottom {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1em;
 }
