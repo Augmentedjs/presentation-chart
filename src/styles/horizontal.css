@@ -1,10 +1,7 @@
 .barChart.horizontal td {
   height: 50px;
   vertical-align: bottom;
-  border-top: 1px solid rgba(0,0,0,0.4);
-  border-bottom: 1px solid rgba(0,0,0,0.4);
-  border-left: 0;
-  border-right: 0;
+  border: 0;
   position: relative;
   background: repeating-linear-gradient(
     to right,
@@ -52,11 +49,30 @@ table.barChart.horizontal > tbody > tr > td:nth-child(1) {
   width: 100%;
 }
 
-.barChart.horizontal td.label p.text {
+.barChart.horizontal > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) {
+  border-top: 1px solid rgba(0,0,0,0.4);
+}
+
+.barChart.horizontal > tbody:nth-child(2) > tr:last-of-type > td:nth-child(2) {
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.barChart.horizontal > tbody:nth-child(2) > tr > td:nth-child(2) {
+  border-left: 1px solid rgba(0,0,0,0.4);
+}
+
+.barChart.horizontal td.label p {
   display: block;
-  position: absolute;
-  top: 50%;
-  left: -1.25em;
-  transform: rotate(90deg);
+  font-size: 8pt;
+  margin: 0;
+  color: var(--dark-text);
+  top: 0;
+}
+
+.barChart.horizontal td.label p.text {
+  position: relative;
+  left: 0;
+  transform:none;
   white-space: nowrap;
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 {
   "name": "augmentedjs-next-chart",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/augmented-next-chart.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "jsdom": "^11.10.0",
     "mocha": "^5.2.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.10.2",
+    "webpack": "^4.16.0",
     "webpack-cli": "^2.1.5",
     "webpack-node-externals": "^1.7.2"
   }

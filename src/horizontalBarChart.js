@@ -27,16 +27,6 @@ const buildBars = (data) => {
 	}
 	return bars;
 },
-buildLabelRow = (start, title, end) => {
-	return `
-		<td class="label"></td>
-		<td class="label">
-			<p class="left">${start}</p>
-			<p class="text">${title}</p>
-			<p class="right">${end}</p>
-		</td>
-	`;
-},
 DEFAULT_TAG = "table";
 
 class HorizontalBarChartView extends Augmented.Presentation.Colleague {
@@ -109,7 +99,14 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 					</tbody>
 					<tfoot>
 						<tr>
-							${buildLabelRow(this.xStart, this.xTitle, this.xEnd)}
+							<td class="label">
+								${this.yTitle}
+							</td>
+							<td class="label">
+								<p class="left">${this.xStart}</p>
+								<p class="text">${this.xTitle}</p>
+								<p class="right">${this.xEnd}</p>
+							</td>
 						</tr>
 					<thead>
 				`;

@@ -23,9 +23,8 @@ const buildBars = (data) => {
 		}
 	}
 	return bars;
-};
-
-const buildXLabels = data => {
+},
+buildXLabels = data => {
 	let labels = "";
 	if (!data) {
 		return "";
@@ -44,20 +43,8 @@ const buildXLabels = data => {
 		}
 	}
 	return labels;
-};
-
-const buildLabelColumn = (start, title, end) => {
-	const label = `
-		<td class="label">
-			<p class="top">${end}</p>
-			<p class="text">${title}</p>
-			<p class="bottom">${start}</p>
-		</td>
-	`;
-	return label;
-};
-
-const DEFAULT_TAG = "table";
+},
+DEFAULT_TAG = "table";
 
 class VerticalBarChartView extends Augmented.Presentation.Colleague {
 	constructor(options) {
@@ -126,7 +113,11 @@ class VerticalBarChartView extends Augmented.Presentation.Colleague {
 					<caption>${this.title}</caption>
 					<tbody>
 						<tr>
-							${buildLabelColumn(this.yStart, this.yTitle, this.yEnd)}
+							<td class="label">
+								<p class="top">${this.yEnd}</p>
+								<p class="text">${this.yTitle}</p>
+								<p class="bottom">${this.yStart}</p>
+							</td>
 							${buildBars(this.data)}
 						</tr>
 					</tbody>
