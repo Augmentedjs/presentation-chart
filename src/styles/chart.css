@@ -1,0 +1,80 @@
+/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+:root {
+  --primary-color: #8d6e63;
+  --primary-color-dark: #5f4339;
+  --primary-color-light: #be9c91;
+  --secondary-color: #f06292;
+  --secondary-color-dark: #ba2d65;
+  --secondary-color-light: #ff94c2;
+  --background-color: #f5f5f5;
+  --app-color: #fce4ec;
+  --light-text: rgba(255, 255, 255, 0.85);
+  --dark-text: rgba(0, 0, 0, 0.85);
+  --blue-500: #2196F3;
+  --yellow-500: #FFEB3B;
+  --orange-500: #FF9800;
+  --red-500: #F44336;
+  --black: black;
+  --purple-500: #9C27B0;
+  --green-500: #4CAF50;
+}
+
+/* The chart */
+
+.barChart {
+  background-color: transparent !important;
+  border: none !important;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.barChart caption {
+  margin-bottom: 8px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.bar.red {
+  background-color: var(--red-500);
+}
+
+.bar.purple {
+  background-color: var(--purple-500);
+}
+
+.bar.yellow {
+  background-color: var(--yellow-500);
+}
+
+.bar.blue {
+  background-color: var(--blue-500);
+}
+
+.bar.black {
+  background-color: var(--black);
+}
+
+.bar.orange {
+  background-color: var(--orange-500);
+}
+
+.bar.green {
+  background-color: var(--green-500);
+}
+
+.barChart > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) {
+  border-left: 1px solid rgba(0,0,0,0.4);
+}
+.barChart > tbody:nth-child(2) > tr > td:last-of-type {
+  border-right: 1px solid rgba(0,0,0,0.4);
+}

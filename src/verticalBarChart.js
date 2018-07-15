@@ -1,5 +1,6 @@
 import Augmented from "augmentedjs-next-presentation";
-import css from "./styles/vertical.css";
+import CSS from "./styles/chart.css";
+import verticalCSS from "./styles/vertical.css";
 
 const buildBars = (data) => {
 	let bars = "";
@@ -11,12 +12,11 @@ const buildBars = (data) => {
 		let i = 0;
 
 		for (i = 0; i < l; i++) {
-			const value = data[i].Y;
 			const style = (data[i].style) ? ` ${data[i].style}` : "";
 			bars += `
 				<td>
-					<div class="bar${style}" style="height: ${value}%">
-						<p>${value}</p>
+					<div class="bar${style}" style="height: ${data[i].Y}%">
+						<p>${data[i].Y}</p>
 					</div>
 				</td>
 			`;

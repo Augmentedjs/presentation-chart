@@ -1,5 +1,6 @@
 import Augmented from "augmentedjs-next-presentation";
-import css from "./styles/horizontal.css";
+import CSS from "./styles/chart.css";
+import horizontalCSS from "./styles/horizontal.css";
 
 const buildBars = (data) => {
 	let bars = "";
@@ -30,9 +31,9 @@ const buildBars = (data) => {
 	return bars;
 };
 
-const buildLabelColumn = (start, title, end) => {
+const buildLabelRow = (start, title, end) => {
 	const label = `
-		<td class="label">
+		<td class="label" colspan = >
 			<p class="top">${end}</p>
 			<p class="text">${title}</p>
 			<p class="bottom">${start}</p>
@@ -113,10 +114,7 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 					</tbody>
 					<tfoot>
 						<tr>
-							<th class="label text">${this.xTitle}</th>
-							<th>
-								
-							</th>
+							${buildLabelRow(this.xStart, this.xTitle, this.xEnds)}
 						</tr>
 					<thead>
 				`;
