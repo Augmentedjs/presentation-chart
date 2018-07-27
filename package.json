@@ -1,6 +1,6 @@
 {
   "name": "augmentedjs-next-chart",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/augmented-next-chart.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/augmentedjs/chart.git"
+    "url": "git+https://github.com/augmentedjs/augmented-next-chart.git"
   },
   "author": "Bob Warren <robert_warren@gap.com>",
   "license": "Apache-2.0",
@@ -23,11 +23,11 @@
     "chart"
   ],
   "bugs": {
-    "url": "https://github.com/augmentedjs/chart/issues"
+    "url": "https://github.com/augmentedjs/augmented-next-chart/issues"
   },
-  "homepage": "https://github.com/augmentedjs/chart#readme",
+  "homepage": "https://github.com/augmentedjs/augmented-next-chart#readme",
   "dependencies": {
-    "augmentedjs-next-presentation": "^2.2.2"
+    "augmentedjs-next-presentation": "^2.3.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.2",
@@ -40,10 +40,10 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "jsdoc": "^3.5.5",
-    "jsdom": "^11.10.0",
+    "jsdom": "^11.12.0",
     "mocha": "^5.2.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.16.0",
+    "webpack": "^4.16.2",
     "webpack-cli": "^2.1.5",
     "webpack-node-externals": "^1.7.2"
   }

@@ -92,6 +92,12 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
     if (this.el) {
       const e = Augmented.Presentation.Dom.selector(this.el);
       if (e) {
+				const styles = this._style.split(" ");
+				let i = 0;
+				const l = styles.length;
+				for (i = 0; i < l; i++) {
+					e.classList.add(styles[i]);
+				}
 				this.template = `
 					<caption>${this.title}</caption>
 					<tbody>
