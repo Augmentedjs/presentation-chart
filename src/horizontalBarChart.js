@@ -1,4 +1,5 @@
-import Augmented from "augmentedjs-next-presentation";
+import { Colleague } from "presentation-mediator";
+import Dom from "presentation-dom";
 import CSS from "./styles/chart.css";
 import horizontalCSS from "./styles/horizontal.css";
 
@@ -27,9 +28,50 @@ const buildBars = (data) => {
 	}
 	return bars;
 },
-DEFAULT_TAG = "table";
+DEFAULT_TAG = "table",
+buildTemplate = (title, data, xTitle, yTitle, xStart, xEnd) => {
+	return `
+		<caption>${title}</caption>
+		<tbody>
+			${buildBars(data)}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="label">
+					${yTitle}
+				</td>
+				<td class="label">
+					<p class="left">${xStart}</p>
+					<p class="text">${xTitle}</p>
+					<p class="right">${xEnd}</p>
+				</td>
+			</tr>
+		<thead>
+	`;
+};
 
-class HorizontalBarChartView extends Augmented.Presentation.Colleague {
+/**
+ * Horizonal Bar Chart
+ * @extends Colleague
+ * @param {object} options Options passed
+ * @example
+ * const chart = new HorizontalBarChartView({
+ *  "title": "Dogs by Breed",
+ *  "xTitle": "Dog",
+ *  "yTitle": "Weight",
+ *  "xStart": 0,
+ *  "xEnd": 100,
+ *  "yStart": 0,
+ *  "yEnd": 100,
+ *  "data": [{
+ *	  "X": "Poodle",
+ *	  "Y": 12,
+ *	  "style": "red"
+ *  }]
+ * });
+ * * supported 'styles' = red, purple, yellow, blue, black, orange, green
+ */
+class HorizontalBarChartView extends Colleague {
 	constructor(options) {
 		if (!options) {
 			options = {};
@@ -90,7 +132,7 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 
 	render() {
     if (this.el) {
-      const e = Augmented.Presentation.Dom.selector(this.el);
+      const e = Dom.selector(this.el);
       if (e) {
 				const styles = this._style.split(" ");
 				let i = 0;
@@ -98,24 +140,8 @@ class HorizontalBarChartView extends Augmented.Presentation.Colleague {
 				for (i = 0; i < l; i++) {
 					e.classList.add(styles[i]);
 				}
-				this.template = `
-					<caption>${this.title}</caption>
-					<tbody>
-						${buildBars(this.data)}
-					</tbody>
-					<tfoot>
-						<tr>
-							<td class="label">
-								${this.yTitle}
-							</td>
-							<td class="label">
-								<p class="left">${this.xStart}</p>
-								<p class="text">${this.xTitle}</p>
-								<p class="right">${this.xEnd}</p>
-							</td>
-						</tr>
-					<thead>
-				`;
+				this.template = buildTemplate(this.title, this.data, this.xTitle, this.yTitle, this.xStart, this.xEnd);
+
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;
       }

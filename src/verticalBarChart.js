@@ -1,4 +1,5 @@
-import Augmented from "augmentedjs-next-presentation";
+import { Colleague } from "presentation-mediator";
+import Dom from "presentation-dom";
 import CSS from "./styles/chart.css";
 import verticalCSS from "./styles/vertical.css";
 
@@ -44,9 +45,51 @@ buildXLabels = data => {
 	}
 	return labels;
 },
-DEFAULT_TAG = "table";
+DEFAULT_TAG = "table",
+buildTemplate = (title, data, xTitle, yTitle, yStart, yEnd) => {
+	return `
+		<caption>${title}</caption>
+		<tbody>
+			<tr>
+				<td class="label">
+					<p class="top">${yEnd}</p>
+					<p class="text">${yTitle}</p>
+					<p class="bottom">${yStart}</p>
+				</td>
+				${buildBars(data)}
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th class="label text">${xTitle}</th>
+				${buildXLabels(data)}
+			</tr>
+		<thead>
+	`;
+};
 
-class VerticalBarChartView extends Augmented.Presentation.Colleague {
+/**
+ * Vertial Bar Chart
+ * @extends Colleague
+ * @param {object} options Options passed
+ * @example
+ * const chart = new VerticalBarChartView({
+ *  "title": "Dogs by Breed",
+ *  "xTitle": "Weight",
+ *  "yTitle": "Breed",
+ *  "xStart": 0,
+ *  "xEnd": 100,
+ *  "yStart": 0,
+ *  "yEnd": 100,
+ *  "data": [{
+ *	  "X": 12,
+ *    "Y": "Poodle",
+ *	  "style": "blue"
+ *  }]
+ * });
+ * * supported 'styles' = red, purple, yellow, blue, black, orange, green
+ */
+class VerticalBarChartView extends Colleague {
 	constructor(options) {
 		if (!options) {
 			options = {};
@@ -59,7 +102,7 @@ class VerticalBarChartView extends Augmented.Presentation.Colleague {
 		if (!options.style) {
 			options.style = "barChart vertical";
 		} else {
-			options.style = `barChart  vertical ${options.style}`;
+			options.style = `barChart vertical ${options.style}`;
 		}
 
 		super(options);
@@ -107,7 +150,7 @@ class VerticalBarChartView extends Augmented.Presentation.Colleague {
 
 	render() {
     if (this.el) {
-      const e = Augmented.Presentation.Dom.selector(this.el);
+      const e = Dom.selector(this.el);
       if (e) {
 				const styles = this._style.split(" ");
 				let i = 0;
@@ -115,26 +158,8 @@ class VerticalBarChartView extends Augmented.Presentation.Colleague {
 				for (i = 0; i < l; i++) {
 					e.classList.add(styles[i]);
 				}
+				this.template = buildTemplate(this.title, this.data, this.xTitle, this.yTitle, this.yStart, this.yEnd);
 
-				this.template = `
-					<caption>${this.title}</caption>
-					<tbody>
-						<tr>
-							<td class="label">
-								<p class="top">${this.yEnd}</p>
-								<p class="text">${this.yTitle}</p>
-								<p class="bottom">${this.yStart}</p>
-							</td>
-							${buildBars(this.data)}
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-							<th class="label text">${this.xTitle}</th>
-							${buildXLabels(this.data)}
-						</tr>
-					<thead>
-				`;
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;
       }

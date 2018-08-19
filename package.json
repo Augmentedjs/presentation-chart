@@ -1,12 +1,14 @@
 {
-  "name": "augmentedjs-next-chart",
-  "version": "1.0.8",
+  "name": "presentation-chart",
+  "version": "1.1.0",
   "description": "A simple class that renders a table like a bar chart",
-  "main": "dist/augmented-next-chart.js",
+  "main": "dist/presentation-chart.js",
   "scripts": {
-    "dev": "webpack --mode development --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
-    "build": "webpack --mode production --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
+    "dev": "clear && webpack --mode development --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
+    "build": "clear && webpack --mode production --module-bind js=babel-loader --module-bind 'css=style-loader!css-loader' --progress",
+    "lint": "eslint ./src/index.js",
     "test": "mocha --require babel-core/register --require test/helper.js -c test/*Spec.js",
+    "docs": "rm -rf jsdoc && jsdoc ./src -r -d ./jsdoc/ -R ./README.md -t ./node_modules/foodoc/template -c ./jsdoc.conf.json -P ./package.json",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build"
@@ -27,24 +29,29 @@
   },
   "homepage": "https://github.com/augmentedjs/augmented-next-chart#readme",
   "dependencies": {
-    "augmentedjs-next-presentation": "^2.3.5"
+    "presentation-dom": "^2.7.1",
+    "presentation-mediator": "^2.5.5"
   },
   "devDependencies": {
-    "babel-core": "^6.26.2",
-    "babel-loader": "^7.1.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
-    "css-loader": "^0.28.11",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
+    "eslint": "^3.2.2",
+    "eslint-config-kentcdodds": "^9.0.2",
+    "foodoc": "0.0.9",
     "jsdoc": "^3.5.5",
     "jsdom": "^11.12.0",
-    "mocha": "^5.2.0",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.16.2",
+    "mocha": "^4.1.0",
+    "mocha-jsdom": "^1.2.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.16.5",
     "webpack-cli": "^2.1.5",
-    "webpack-node-externals": "^1.7.2"
+    "style-loader": "^0.21.0",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0"
   }
 }
