@@ -8,6 +8,9 @@ class ChartData extends Collection {
       options = {};
     }
     options.model = Point;
+
+    //console.debug("ChartData models", models);
+
     super(models, options);
   };
 };

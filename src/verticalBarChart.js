@@ -5,6 +5,7 @@ import CSS from "./styles/chart.css";
 import verticalCSS from "./styles/vertical.css";
 
 const buildBars = (data) => {
+	console.log("Data", data);
 	let bars = "";
 	if (!data) {
 		return "";
@@ -107,6 +108,7 @@ class VerticalBarChartView extends Colleague {
 		}
 
 		super(options);
+		//this.collection = new ChartData();
 		this.title = (options.title) ? options.title : "Untitled";
 		this.xTitle = (options.xTitle) ? options.xTitle : "X";
 		this.yTitle = (options.yTitle) ? options.yTitle : "Y";
@@ -114,9 +116,7 @@ class VerticalBarChartView extends Colleague {
 		this.xEnd = (options.xEnd) ? options.xEnd : 100;
 		this.yStart = (options.yStart) ? options.yStart : 0;
 		this.yEnd = (options.yEnd) ? options.yEnd : 100;
-		const data = (options.data) ? options.data : null;
-
-		this.collection = new ChartData(data);
+	 	this.data = (options.data) ? options.data : null;
 	};
 
 	render() {
@@ -129,7 +129,7 @@ class VerticalBarChartView extends Colleague {
 				for (i = 0; i < l; i++) {
 					e.classList.add(styles[i]);
 				}
-				this.template = buildTemplate(this.title, this.collection.toJSON(), this.xTitle, this.yTitle, this.yStart, this.yEnd);
+				this.template = buildTemplate(this.title, this.data, this.xTitle, this.yTitle, this.yStart, this.yEnd);
 
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;

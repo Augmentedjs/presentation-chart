@@ -97,9 +97,10 @@ class HorizontalBarChartView extends Colleague {
 		this.xEnd = (options.xEnd) ? options.xEnd : 100;
 		this.yStart = (options.yStart) ? options.yStart : 0;
 		this.yEnd = (options.yEnd) ? options.yEnd : 100;
-		const data = (options.data) ? options.data : null;
+		this.data = (options.data) ? options.data : null;
 
-		this.collection = new ChartData(data);
+		//this.collection = new ChartData();
+		//this.collection.add(data);
 	};
 
 	render() {
@@ -112,7 +113,7 @@ class HorizontalBarChartView extends Colleague {
 				for (i = 0; i < l; i++) {
 					e.classList.add(styles[i]);
 				}
-				this.template = buildTemplate(this.title, this.collection.toJSON(), this.xTitle, this.yTitle, this.xStart, this.xEnd);
+				this.template = buildTemplate(this.title, this.data, this.xTitle, this.yTitle, this.xStart, this.xEnd);
 
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;
