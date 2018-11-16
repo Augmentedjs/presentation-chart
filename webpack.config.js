@@ -39,6 +39,12 @@ module.exports = {
       commonjs2: 'presentation-dom',
       amd: 'presentation-dom',
       root: 'presentation-dom'
+    },
+    'presentation-models': {
+      commonjs: 'presentation-models',
+      commonjs2: 'presentation-models',
+      amd: 'presentation-models',
+      root: 'presentation-models'
     }
   },
   plugins: [

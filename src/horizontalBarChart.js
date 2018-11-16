@@ -1,5 +1,6 @@
 import { Colleague } from "presentation-mediator";
 import Dom from "presentation-dom";
+import ChartData from "./collections/data.js";
 import CSS from "./styles/chart.css";
 import horizontalCSS from "./styles/horizontal.css";
 
@@ -88,46 +89,17 @@ class HorizontalBarChartView extends Colleague {
 		}
 
 		super(options);
-		if (options.title) {
-			this.title = options.title;
-		} else {
-			this.title = "Untitled";
-		}
-		if (options.xTitle) {
-			this.xTitle = options.xTitle;
-		} else {
-			this.xTitle = "X";
-		}
-		if (options.yTitle) {
-			this.yTitle = options.yTitle;
-		} else {
-			this.yTitle = "Y";
-		}
-		if (options.xStart) {
-			this.xStart = options.xStart;
-		} else {
-			this.xStart = 0;
-		}
-		if (options.xEnd) {
-			this.xEnd = options.xEnd;
-		} else {
-			this.xEnd = 100;
-		}
-		if (options.yStart) {
-			this.yStart = options.yStart;
-		} else {
-			this.yStart = 0;
-		}
-		if (options.yEnd) {
-			this.yEnd = options.yEnd;
-		} else {
-			this.yEnd = 100;
-		}
-		if (options.data) {
-			this.data = options.data;
-		} else {
-			this.data = [];
-		}
+
+		this.title = (options.title) ? options.title : "Untitled";
+		this.xTitle = (options.xTitle) ? options.xTitle : "X";
+		this.yTitle = (options.yTitle) ? options.yTitle : "Y";
+		this.xStart = (options.xStart) ? options.xStart : 0;
+		this.xEnd = (options.xEnd) ? options.xEnd : 100;
+		this.yStart = (options.yStart) ? options.yStart : 0;
+		this.yEnd = (options.yEnd) ? options.yEnd : 100;
+		const data = (options.data) ? options.data : null;
+
+		this.collection = new ChartData(data);
 	};
 
 	render() {
@@ -140,7 +112,7 @@ class HorizontalBarChartView extends Colleague {
 				for (i = 0; i < l; i++) {
 					e.classList.add(styles[i]);
 				}
-				this.template = buildTemplate(this.title, this.data, this.xTitle, this.yTitle, this.xStart, this.xEnd);
+				this.template = buildTemplate(this.title, this.collection.toJSON(), this.xTitle, this.yTitle, this.xStart, this.xEnd);
 
         e.setAttribute(`data-${this.name}`, "chart");
         e.innerHTML = this.template;
