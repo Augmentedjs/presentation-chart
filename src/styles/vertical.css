@@ -1,5 +1,5 @@
 .barChart.vertical td {
-  height: 250px;
+  height: 30rem;
   vertical-align: bottom;
   border-top: 1px solid rgba(0,0,0,0.4);
   border-bottom: 1px solid rgba(0,0,0,0.4);
@@ -18,7 +18,7 @@
 .barChart.vertical th {
   width: 18%;
   border: 0;
-  height: 1em;
+  height: 1rem;
   text-align: center;
   position: relative;
   background: none;
@@ -32,7 +32,7 @@
 
 .barChart.vertical > td.label p {
   text-align: right;
-  font-size: 8pt;
+  font-size: 0.5rem;
   margin: 0;
   color: var(--dark-text);
 }
@@ -41,7 +41,7 @@
   display: block;
   position: absolute;
   top: 50%;
-  left: -1.25em;
+  left: -1rem;
   transform: rotate(90deg);
   white-space: nowrap;
 }

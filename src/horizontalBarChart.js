@@ -1,6 +1,5 @@
 import { Colleague } from "presentation-mediator";
 import Dom from "presentation-dom";
-import ChartData from "./collections/data.js";
 import CSS from "./styles/chart.css";
 import horizontalCSS from "./styles/horizontal.css";
 
@@ -98,9 +97,6 @@ class HorizontalBarChartView extends Colleague {
 		this.yStart = (options.yStart) ? options.yStart : 0;
 		this.yEnd = (options.yEnd) ? options.yEnd : 100;
 		this.data = (options.data) ? options.data : null;
-
-		//this.collection = new ChartData();
-		//this.collection.add(data);
 	};
 
 	render() {

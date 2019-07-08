@@ -1,5 +1,5 @@
 .barChart.horizontal td {
-  height: 50px;
+  height: 3rem;
   vertical-align: bottom;
   border: 0;
   position: relative;
@@ -21,7 +21,7 @@ table.barChart.horizontal > tbody > tr > td:nth-child(1) {
 .barChart.horizontal th {
   width: 18%;
   border: 0;
-  height: 1em;
+  height: 1rem;
   text-align: center;
   position: relative;
   background: none;
@@ -42,10 +42,10 @@ table.barChart.horizontal > tbody > tr > td:nth-child(1) {
 .barChart.horizontal .bar > p {
   display: block;
   position: absolute;
-  top: 1em;
-  right: -2em;
+  top: 0.25rem;
+  right: -1rem;
   text-align: right;
-  font-size: 7pt;
+  font-size: 0.5rem;
   width: 100%;
 }
 
@@ -63,7 +63,7 @@ table.barChart.horizontal > tbody > tr > td:nth-child(1) {
 
 .barChart.horizontal td.label p {
   display: block;
-  font-size: 8pt;
+  font-size: 0.5rem;
   margin: 0;
   color: var(--dark-text);
   top: 0;

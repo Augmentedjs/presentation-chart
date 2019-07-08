@@ -22,31 +22,47 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [{
+          loader: "style-loader"
+        },
+        {
+          loader: "css-loader", options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: "sass-loader", options: {
+            sourceMap: true
+          }
+        }]
       }
     ]
   },
-  stats: "errors-only",
-  devtool: "source-map",
   externals: {
-    'presentation-mediator': {
-      commonjs: 'presentation-mediator',
-      commonjs2: 'presentation-mediator',
-      amd: 'presentation-mediator',
-      root: 'presentation-mediator'
-    },
     'presentation-dom': {
       commonjs: 'presentation-dom',
       commonjs2: 'presentation-dom',
       amd: 'presentation-dom',
       root: 'presentation-dom'
     },
-    'presentation-models': {
-      commonjs: 'presentation-models',
-      commonjs2: 'presentation-models',
-      amd: 'presentation-models',
-      root: 'presentation-models'
+    'presentation-mediator': {
+      commonjs: 'presentation-mediator',
+      commonjs2: 'presentation-mediator',
+      amd: 'presentation-mediator',
+      root: 'presentation-mediator'
+    },
+    'presentation-mediator': {
+      commonjs: 'presentation-mediator',
+      commonjs2: 'presentation-mediator',
+      amd: 'presentation-mediator',
+      root: 'presentation-mediator'
     }
   },
+  stats: "errors-only",
+  devtool: "source-map",
   plugins: [
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(require("./package.json").version)

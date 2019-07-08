@@ -2,20 +2,9 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["safari 10", "firefox > 56", "not edge > 0", "ios 10", "chrome > 60", "not ie > 0", "not op_mini all"]
+        "browsers": ["firefox > 65", "chrome > 66"]
       },
       "debug": true
-    }]
-  ],
-  "plugins": [
-    ["transform-regenerator", {
-      "asyncGenerators": true,
-      "generators": true,
-      "async": true
-    }],
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": true
     }]
   ]
 }

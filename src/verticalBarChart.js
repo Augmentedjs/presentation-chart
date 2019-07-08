@@ -1,11 +1,10 @@
 import { Colleague } from "presentation-mediator";
 import Dom from "presentation-dom";
-import ChartData from "./collections/data.js";
 import CSS from "./styles/chart.css";
 import verticalCSS from "./styles/vertical.css";
 
 const buildBars = (data) => {
-	console.log("Data", data);
+	//console.log("Data", data);
 	let bars = "";
 	if (!data) {
 		return "";
@@ -108,7 +107,6 @@ class VerticalBarChartView extends Colleague {
 		}
 
 		super(options);
-		//this.collection = new ChartData();
 		this.title = (options.title) ? options.title : "Untitled";
 		this.xTitle = (options.xTitle) ? options.xTitle : "X";
 		this.yTitle = (options.yTitle) ? options.yTitle : "Y";
