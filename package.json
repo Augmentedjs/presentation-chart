@@ -1,6 +1,6 @@
 {
   "name": "presentation-chart",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/presentation-chart.js",
   "scripts": {
@@ -31,25 +31,25 @@
   "dependencies": {
     "presentation-dom": "^2.8.2",
     "presentation-mediator": "^3.0.0",
-    "presentation-models": "^3.1.4"
+    "presentation-models": "^3.1.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/register": "^7.10.1",
+    "@babel/core": "^7.10.4",
+    "@babel/register": "^7.10.4",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "css-loader": "^3.5.3",
-    "documentation": "^13.0.1",
+    "css-loader": "^3.6.0",
+    "documentation": "^13.0.2",
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.4",
     "jsdom": "^16.2.2",
-    "mocha": "^7.2.0",
+    "mocha": "^8.0.1",
     "mocha-jsdom": "^2.0.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^9.0.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }

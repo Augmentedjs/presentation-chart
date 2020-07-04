@@ -1,8 +1,8 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
-        "browsers": ["firefox > 65", "chrome > 66"]
+        "browsers": ["firefox >= 67", "chrome >= 74"]
       },
       "debug": true
     }]
