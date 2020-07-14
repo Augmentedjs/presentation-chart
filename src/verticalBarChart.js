@@ -1,5 +1,5 @@
 import { Colleague } from "presentation-mediator";
-import Dom from "presentation-dom";
+import { Dom } from "presentation-dom";
 import CSS from "./styles/chart.css";
 import verticalCSS from "./styles/vertical.css";
 
