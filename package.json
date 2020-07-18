@@ -1,6 +1,6 @@
 {
   "name": "presentation-chart",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/presentation-chart.js",
   "scripts": {
@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/augmentedjs/presentation-chart#readme",
   "dependencies": {
-    "presentation-dom": "^3.0.0",
+    "presentation-dom": "^3.0.3",
     "presentation-mediator": "^3.0.0",
-    "presentation-models": "^3.1.5"
+    "presentation-models": "^3.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@babel/register": "^7.10.4",
+    "@babel/core": "^7.10.5",
+    "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "buffer": "^5.6.0",
