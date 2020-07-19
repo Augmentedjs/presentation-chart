@@ -1,6 +1,6 @@
 {
   "name": "presentation-chart",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "A simple class that renders a table like a bar chart",
   "main": "dist/presentation-chart.js",
   "scripts": {
