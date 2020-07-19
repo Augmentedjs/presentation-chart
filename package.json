@@ -30,7 +30,7 @@
   "homepage": "https://github.com/augmentedjs/presentation-chart#readme",
   "dependencies": {
     "presentation-dom": "^3.0.3",
-    "presentation-mediator": "^3.0.0",
+    "presentation-mediator": "^3.0.1",
     "presentation-models": "^3.1.6"
   },
   "devDependencies": {
